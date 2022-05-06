@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace RpgApi.Models
 {
+    
     public class Usuario
     {
         //Atalho para propridade (PROP + TAB)
@@ -21,6 +23,13 @@ namespace RpgApi.Models
         public string PasswordString { get; set; }
         public List<Personagem> Personagens { get; set; }//using System.Collections.Generic;
 
-        
+        [Required]
+        public string Perfil { get; set; }
+
     }
+
+   
+
+        
+
 }

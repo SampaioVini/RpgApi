@@ -63,6 +63,8 @@ namespace RpgApi.Data
                 new Habilidade(){Id=3, Nome="Hipnotizar", Dano=37}
             );
 
+
+
             modelBuilder.Entity<PersonagemHabilidade>().HasData
             (                  
                 new PersonagemHabilidade() { PersonagemId = 1, HabilidadeId =1 }, 
@@ -75,11 +77,10 @@ namespace RpgApi.Data
                 new PersonagemHabilidade() { PersonagemId = 6, HabilidadeId =2 }, 
                 new PersonagemHabilidade() { PersonagemId = 7, HabilidadeId =3 }                               
             );
-
             
+             modelBuilder.Entity<Usuario>().Property(u => u.Perfil).HasDefaultValue("Jogador");
 
-        }//Fim do método OnModelCreating
-
+        }
 
 
     
