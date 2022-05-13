@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RpgApi.Data;
 using RpgApi.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 namespace RpgApi.Controllers
 {
@@ -11,21 +14,28 @@ namespace RpgApi.Controllers
     [Route("[controller]")]
     public class ArmasController : ControllerBase
     {
-        private readonly DataContext _context;//Declaração contexto do Banco
+        private readonly DataContext _context;
+        private readonly IHttpContextAccessor _httpContextoAccessor; 
 
-        public ArmasController(DataContext context)
+        public ArmasController(DataContext context, IHttpContextAccessor httpContextAccessor)
         {
-            _context = context; //inicialização do contexto do banco
+            _context = context; 
+            _httpContextoAccessor = httpContextAccessor;
         }
 
-        [HttpGet("{id}")] //Buscar pelo id
-        public async Task<IActionResult> GetSingle(int id)//using using System.Threading.Tasks;
+        private int ObterUsusarioId()
+        {
+            return int.Parse(_httpContextoAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+        }
+
+        [HttpGet("{id}")] 
+        public async Task<IActionResult> GetSingle(int id)
         {
             try
             {
                 Arma a = await _context.Armas                        
                        .FirstOrDefaultAsync(aBusca => aBusca.Id == id);
-                //using Microsoft.EntityFrameworkCore;
+               
 
                 return Ok(a);
             }
@@ -40,7 +50,7 @@ namespace RpgApi.Controllers
         {
             try
             {
-                //using System.Collections.Generic;
+                
                 List<Arma> lista = await _context.Armas                    
                     .ToListAsync();
                 return Ok(lista);
@@ -51,15 +61,25 @@ namespace RpgApi.Controllers
             }
         }
 
-        [HttpPost]
+         [HttpPost]
         public async Task<IActionResult> Add(Arma novaArma)
         {
             try
             {
                 if (novaArma.Dano == 0)
                 {
-                    throw new System.Exception("O dano da arma não pode ser 0");
+                    throw new System.Exception("O dano da arma não pode ser 0.");
                 }
+
+                Personagem personagem = await _context.Personagens.FirstOrDefaultAsync(p => p.Id == novaArma.PersonagemId);
+
+                if(personagem == null)
+                    throw new System.Exception("Seu usuário não contém personagens com o Id de personagem informado.");
+                
+                Arma buscaArma = await _context.Armas.FirstOrDefaultAsync(a => a.PersonagemId == novaArma.PersonagemId);
+
+                if(buscaArma != null)
+                    throw new System.Exception("O personagem informado já contém uma arma atribuído a ele.");
 
                 await _context.Armas.AddAsync(novaArma);
                 await _context.SaveChangesAsync();

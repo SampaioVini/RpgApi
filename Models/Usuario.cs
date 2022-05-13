@@ -17,14 +17,17 @@ namespace RpgApi.Models
         public byte[] Foto { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
-        public DateTime? DataAcesso { get; set; } //using System;
+        public DateTime? DataAcesso { get; set; } 
+        
 
-        [NotMapped] // using System.ComponentModel.DataAnnotations.Schema
+        [NotMapped] 
         public string PasswordString { get; set; }
-        public List<Personagem> Personagens { get; set; }//using System.Collections.Generic;
+        public List<Personagem> Personagens { get; set; }
 
-        [Required]
+        //[Required]
         public string Perfil { get; set; }
+
+        public string Email {get; set;}
 
     }
 

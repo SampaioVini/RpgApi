@@ -21,7 +21,7 @@ namespace RpgApi.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly DataContext _context;
-        private readonly IConfiguration _configuration; //using Microsoft.Extensions.Configuration;
+        private readonly IConfiguration _configuration; 
         
         public UsuariosController(DataContext context, IConfiguration configuration)
         {
