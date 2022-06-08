@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "usltQHH5hgmjOm9Hafc2GHpD+45rBeipFrbl6JgJecc/CWaLrKMpHyLZGScumJ6Dj5kMhfh5z6qOYQOw1n8Izw==",
+  "dgSpecHash": "o15tdSuSZr990m6abkqfC7Hgu82aFtxP8HTz2dJSRTQp8z8ytzhv31L6cBuhLVmIFjz2V3001jNT6vGcceRurA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\TRABALHOS\\RpgApiVini\\RpgApi\\RpgApi.csproj",
+  "projectFilePath": "C:\\Users\\vinic\\Downloads\\trabalhos\\RpgDs\\RpgApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vinic\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.15\\microsoft.aspnetcore.authentication.jwtbearer.5.0.15.nupkg.sha512",

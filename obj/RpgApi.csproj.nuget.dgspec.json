@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\TRABALHOS\\RpgApiVini\\RpgApi\\RpgApi.csproj": {}
+    "C:\\Users\\vinic\\Downloads\\trabalhos\\RpgDs\\RpgApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\TRABALHOS\\RpgApiVini\\RpgApi\\RpgApi.csproj": {
+    "C:\\Users\\vinic\\Downloads\\trabalhos\\RpgDs\\RpgApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\TRABALHOS\\RpgApiVini\\RpgApi\\RpgApi.csproj",
+        "projectUniqueName": "C:\\Users\\vinic\\Downloads\\trabalhos\\RpgDs\\RpgApi.csproj",
         "projectName": "RpgApi",
-        "projectPath": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\TRABALHOS\\RpgApiVini\\RpgApi\\RpgApi.csproj",
+        "projectPath": "C:\\Users\\vinic\\Downloads\\trabalhos\\RpgDs\\RpgApi.csproj",
         "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinic\\OneDrive\\Área de Trabalho\\TRABALHOS\\RpgApiVini\\RpgApi\\obj\\",
+        "outputPath": "C:\\Users\\vinic\\Downloads\\trabalhos\\RpgDs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config"
