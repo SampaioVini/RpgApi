@@ -33,7 +33,7 @@ namespace RpgApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ConexaoFreeAspHosting")));
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ConexaoSomee")));
 
             services.AddControllers();
 
@@ -77,8 +77,10 @@ namespace RpgApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseAuthentication();
+           
             app.UseAuthorization();
+
+            app.UseAuthentication();
             
 
             app.UseEndpoints(endpoints =>
